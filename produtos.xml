@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<items>
+    <produto>
+        <nome>Fogao</nome>
+        <categoria>eletrodomesticos</categoria>
+        <valor>900</valor>
+        <descricao>Fogão 5 Bocas Facilite com Timer CF676ARUNA Inox Bivolt</descricao>
+        <imagem>img/eletrodomesticos/fogao3p.jpg</imagem>
+    </produto>
+
+    <produto>
+        <nome>Refrigerador</nome>
+        <categoria>eletrodomesticos</categoria>
+        <valor>6500</valor>
+        <descricao>Geladeira Electrolux Frost Free Side by Side 656 Litros Inox</descricao>
+        <imagem>img/eletrodomesticos/geladeira3p.jpg</imagem>
+    </produto>
+
+    <produto>
+        <nome>Maquina de Lavar</nome>
+        <categoria>eletrodomesticos</categoria>
+        <valor>2600</valor>
+        <descricao>Lava e Seca LG 10kg 6 Motion Aço Escovado</descricao>
+        <imagem>img/eletrodomesticos/maquina1p.jpg</imagem>
+    </produto>
+
+    <produto>
+        <nome>Multifuncional</nome>
+        <categoria>informatica</categoria>
+        <valor>700</valor>
+        <descricao>HP Laserjet Pro M1132 Laser Monocromática Copia Digitaliza 600 dpi Monitor de LED numérico 110V</descricao>
+        <imagem>img/informatica/impressorap.jpg</imagem>
+    </produto>
+
+    <produto>
+        <nome>IPad</nome>
+        <categoria>informatica</categoria>
+        <valor>2000</valor>
+        <descricao>Tela de Retina 9,7 polegadas iOS7 Memória de 16GB Processador A7 Wi-Fi Câmera HD de 5MP Prateado</descricao>
+        <imagem>img/informatica/ipadp.jpg</imagem>
+    </produto>
+
+    <produto>
+        <nome>Roteador</nome>
+        <categoria>informatica</categoria>
+        <valor>70</valor>
+        <descricao>Roteador Dexcom Wireless RTWL30F1 300Mbps 4 portas 2 antenas</descricao>
+        <imagem>img/informatica/modemp.jpg</imagem>
+    </produto>
+
+    <produto>
+        <nome>Cabeceira Box</nome>
+        <categoria>moveis</categoria>
+        <valor>270</valor>
+        <descricao>Cabeceira Simbal Chevalier Branco com Preto Compatível com Colchão de 138 cm</descricao>
+        <imagem>img/moveis/cabeceirap.jpg</imagem>
+    </produto>
+
+    <produto>
+        <nome>Cama</nome>
+        <categoria>moveis</categoria>
+        <valor>260</valor>
+        <descricao>Cama de Casal Neville Branca com Preto</descricao>
+        <imagem>img/moveis/camap.jpg</imagem>
+    </produto>
+
+    <produto>
+        <nome>Guarda-Roupas</nome>
+        <categoria>moveis</categoria>
+        <valor>400</valor>
+        <descricao>Guarda Roupa Búzios 4 Portas 2 Gavetas Branco e Preto</descricao>
+        <imagem>img/moveis/guardaroupap.jpg</imagem>
+    </produto>
+</items>
