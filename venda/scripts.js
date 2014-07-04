@@ -11,43 +11,6 @@ var itens = [
     ['Guarda-Roupas','moveis','400','Guarda Roupa Búzios 4 Portas 2 Gavetas Branco e Preto','img/moveis/guardaroupap.jpg',3]
 ];
 
-function submeter(funcao){
-    var xmlhttp = null;
-    // code for IE7+, Firefox, Chrome, Opera, Safari
-    if (window.XMLHttpRequest)
-        xmlhttp = new XMLHttpRequest();
-    // code for IE6, IE5
-    else
-        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-
-    xmlhttp.onreadystatechange = function(){
-        if (xmlhttp.readyState==4 && xmlhttp.status==200){
-            //document.getElementById("myDiv").innerHTML=
-            if ((xmlhttp.responseText).search('ok')>0)
-                location.href='index.php';
-        }
-    };
-    
-    var url, nome, senha, dados;
-    
-    if (funcao == "login"){
-        url = "login.php";
-        nome = document.getElementById("nome").value;
-        senha = document.getElementById("senha").value;
-    }
-    else if (funcao == "cadastro"){
-        url = "cadastroUsuario.php";
-        nome = document.getElementById("cadNome").value;
-        senha = document.getElementById("cadSenha").value;
-    }
-    
-    dados = "nome="+nome+"&senha="+senha;
-    
-    xmlhttp.open("POST", url, true);
-    xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-    xmlhttp.send(dados);
-}
-
 function OpenPopupCenter(pageURL, title, w, h) {
     var left = (screen.width - w) / 2;
     var top = (screen.height - h) / 4;  // for 25% - devide by 4  |  for 33% - devide by 3
@@ -97,10 +60,10 @@ function preencheItens(catItem){
         for (x=0;x<9;x++){
             if (catItem == itens[x][1]){
                 texto = texto + "<div id='"+itens[x][0]+"' class='itemLista'>";
-                src=itens[x][4];
-                cat=itens[x][5];
+            src=itens[x][4];
+            cat=itens[x][5];
                 
-                texto = texto + "<img src="+itens[x][4]+" alt=item onclick=OpenPopupCenter(\'detalhes.php?img="+src+"&cat="+cat+"\',\'DETALHE\',800,600)>";
+texto = texto + "<img src="+itens[x][4]+" alt=item onclick=OpenPopupCenter(\'detalhes.php?img="+src+"&cat="+cat+"\',\'DETALHE\',800,600)>";
                 texto = texto + "<p class='p1'>"+itens[x][0]+"</p>"+itens[x][3]+"<p class='p2'>R$ "+itens[x][2]+",00</p>";
                 texto = texto + "<input type='button' value='comprar' name='"+itens[x][0]+"' onclick='comprar(this.name)'></div>";
             }
@@ -115,13 +78,13 @@ function comprar(nomeItem){
 }
 
 function getCookie(cname){
-    var name = cname + "=";
-    var ca = document.cookie.split(';');
-    for(var i=0; i<ca.length; i++){
-      var c = ca[i].trim();
-      if (c.indexOf(name)==0) return c.substring(name.length,c.length);
-    }
-    return "";
+var name = cname + "=";
+var ca = document.cookie.split(';');
+for(var i=0; i<ca.length; i++){
+  var c = ca[i].trim();
+  if (c.indexOf(name)==0) return c.substring(name.length,c.length);
+  }
+return "";
 }
 
 function categoria(){
