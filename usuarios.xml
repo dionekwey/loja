@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<senhas>
+    <usuario>
+	<nome>admin</nome>
+	<senha>admin</senha>
+    </usuario>
+    <usuario>
+	<nome>dione</nome>
+	<senha>123</senha>
+    </usuario>
+</senhas>

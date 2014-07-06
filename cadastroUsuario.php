@@ -1,44 +1,26 @@
-<link rel="stylesheet" href="estilos.css">
-<script type="text/javascript">
-    function atraso(){
-        setTimeout("window.location='index.php'",3000);
-    }
-</script>
-<?php
-    $nomeCli=$_POST['nome'];
-    $senhaCli=$_POST['senha'];
-    
-    $arqCli = @fopen('clientes.txt','a+');
-    $x = 0;
-    while(!feof($arqCli)){
-        $linha = fgets($arqCli);
-        $reg = explode(";",$linha);
-        if ($nomeCli == $reg[0]){
-            $x++;
-            echo '<p class="msgErro"><b>Usuario ja existe!</b><br>Tente outro usuario...</p>';
-            echo '<script>atraso()</script>';
-            exit();
-        }
-        else if ($nomeCli=="" || $senhaCli==""){
-            $x++;
-            echo '<p class="msgErro"><b>Favor preencher campos obrigatorios!</b><br>Usuario ou senha em branco...</p>';
-            echo '<script>atraso()</script>';
-            exit();
-        }
-    }
-            
-    if ($x == 0){
-        fprintf($arqCli, "%s", utf8_encode($nomeCli).";".$senhaCli.";\n");
-        
-        /* ---------------------------------------
-        Aqui ficará os Cookies e Sessões
-        ex: setcookie('usuario', $nomeCli, time()+60);
-        ---------------------------------------- */
+ <?php
+    $nome = isset($_POST['nome'])? $_POST['nome']:'';
+    $senha = isset($_POST['senha'])? $_POST['senha']:'';
 
-        echo '<p class="msgOk"><b>Cadastro Realizado com sucesso!<b><br><br>';
-        echo 'Aguarde...</p>';
-        echo '<script>atraso()</script>';
-        exit();
+    $xmlfile='usuarios.xml';
+
+    if (file_exists($xmlfile)) {
+        $usuario = @simplexml_load_file($xmlfile);
+        
+        $nc = $usuario->addChild("usuario");
+        $nc->addChild("nome","$nome");
+        $nc->addChild("senha","$senha");
     }
-    fclose($arqCli);
+    else{
+$xml = <<<EOF
+    <usuarios>\n<senhas><nome></nome><senha></senha></senhas>\n</usuarios>
+EOF;
+        $usuario = simplexml_load_string($xml);
+        $usuario->senhas[0]->nome="$nome";
+        $usuario->senhas[0]->senha="$senha";
+    }
+
+    file_put_contents("usuarios.xml",$usuario->asXML());
+    
+    die('ok');
 ?>

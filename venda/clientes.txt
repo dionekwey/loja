@@ -1,5 +1,0 @@
-admin;admin;
-dione;123;
-teste;555;
-teste1;123;
-francisco;123;
